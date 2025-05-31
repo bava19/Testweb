@@ -1,257 +1,186 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PrimeLab Diagnostics</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LaboraX - Advanced Diagnostics Lab</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    :root {
-      --blue: #007BFF;
-      --light-blue: #e6f0ff;
-      --font: 'Poppins', sans-serif;
-      --gray: #6c757d;
-      --radius: 12px;
-    }* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: var(--font);
-}
-
-body {
-  background-color: #fff;
-  color: #333;
-  line-height: 1.6;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 10%;
-  background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.logo {
-  font-weight: 600;
-  font-size: 1.8rem;
-  color: var(--blue);
-}
-
-nav a {
-  margin-left: 24px;
-  text-decoration: none;
-  color: var(--gray);
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-nav a:hover {
-  color: var(--blue);
-}
-
-.container {
-  padding: 0 10%;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 80px 0;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-.hero-text {
-  flex: 1;
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: #000;
-}
-
-.hero-image {
-  flex: 1;
-  text-align: center;
-}
-
-.hero-image img {
-  width: 100%;
-  max-width: 500px;
-  border-radius: var(--radius);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
-
-.services {
-  background-color: var(--light-blue);
-  padding: 80px 0;
-  border-top: 1px solid #eee;
-}
-
-.services h2 {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 2rem;
-  color: var(--blue);
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-}
-
-.card {
-  background: #fff;
-  padding: 30px;
-  border-radius: var(--radius);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s;
-  text-align: center;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card-icon {
-  font-size: 2rem;
-  color: var(--blue);
-  margin-bottom: 15px;
-}
-
-.about, .contact {
-  padding: 80px 0;
-}
-
-.about h2, .contact h2 {
-  color: var(--blue);
-  margin-bottom: 20px;
-  font-size: 2rem;
-}
-
-.about p {
-  max-width: 800px;
-  margin: auto;
-  text-align: center;
-  font-size: 1.1rem;
-  color: var(--gray);
-}
-
-.contact form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  max-width: 600px;
-  margin: auto;
-}
-
-.contact input, .contact textarea {
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: var(--radius);
-  font-size: 1rem;
-}
-
-.contact button {
-  background-color: var(--blue);
-  color: #fff;
-  padding: 15px;
-  border: none;
-  border-radius: var(--radius);
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.contact button:hover {
-  background-color: #0056b3;
-}
-
-footer {
-  background-color: #f8f9fa;
-  text-align: center;
-  padding: 30px 10%;
-  font-size: 0.95rem;
-  color: #555;
-}
-
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
+    body {
+      font-family: 'Inter', sans-serif;
+    }
   </style>
 </head>
-<body>
-  <header>
-    <div class="logo">PrimeLab Diagnostics</div>
-    <nav>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>  <main class="container">
-    <section class="hero">
-      <div class="hero-text">
-        Advanced Medical Testing<br /> Solutions for a Healthier Tomorrow
-      </div>
-      <div class="hero-image">
-        <img src="https://via.placeholder.com/500x350?text=High-Tech+Lab" alt="Lab Image">
-      </div>
-    </section><section id="services" class="services">
-  <div class="container">
-    <h2>Our Services</h2>
-    <div class="cards">
-      <div class="card">
-        <div class="card-icon">🩸</div>
-        <div>Blood Testing</div>
-      </div>
-      <div class="card">
-        <div class="card-icon">🧬</div>
-        <div>Genetic Screening</div>
-      </div>
-      <div class="card">
-        <div class="card-icon">🔬</div>
-        <div>Pathology Services</div>
-      </div>
-      <div class="card">
-        <div class="card-icon">🦠</div>
-        <div>COVID-19 Testing</div>
+<body class="bg-white text-gray-800">
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20 px-6">
+    <div class="max-w-7xl mx-auto text-center">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">LaboraX</h1>
+      <p class="text-xl md:text-2xl mb-6">Precision Diagnostics for a Healthier Tomorrow</p>
+      <a href="#contact" class="bg-white text-blue-700 font-semibold py-3 px-6 rounded-full hover:bg-gray-100 transition">Book a Test</a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-16 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-12">Our Services</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LaboraX - Advanced Diagnostics Lab</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20 px-6">
+    <div class="max-w-7xl mx-auto text-center">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">LaboraX</h1>
+      <p class="text-xl md:text-2xl mb-6">Precision Diagnostics for a Healthier Tomorrow</p>
+      <a href="#contact" class="bg-white text-blue-700 font-semibold py-3 px-6 rounded-full hover:bg-gray-100 transition">Book a Test</a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-16 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-12">Our Services</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-2">Pathology</h3>
+          <p>Comprehensive blood, urine, and tissue analysis with rapid turnaround times.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-2">Radiology</h3>
+          <p>Advanced imaging services including MRI, CT scans, and X-rays.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-2">Genetic Testing</h3>
+          <p>Cutting-edge DNA analysis for personalized health insights.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="about" class="about">
-  <div class="container">
-    <h2>About Us</h2>
-    <p>PrimeLab Diagnostics offers cutting-edge medical testing with a commitment to accuracy and efficiency. Our laboratory integrates modern equipment with compassionate care to ensure precise diagnostic results that support better patient outcomes.</p>
-  </div>
-</section>
+  <!-- Features Section -->
+  <section class="py-16 px-6">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-12">Why Choose LaboraX?</h2>
+      <div class="grid md:grid-cols-2 gap-8 text-left">
+        <div>
+          <h3 class="text-xl font-semibold mb-2">State-of-the-Art Equipment</h3>
+          <p>Utilizing the latest technology to ensure accurate and timely results.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Certified Professionals</h3>
+          <p>Our team comprises experienced and accredited laboratory specialists.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Online Reporting</h3>
+          <p>Access your test results securely through our patient portal.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Home Sample Collection</h3>
+          <p>Convenient at-home sample collection services available upon request.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section id="contact" class="contact">
-  <div class="container">
-    <h2>Contact Us</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea rows="4" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </div>
-</section>
+  <!-- Testimonials Section -->
+  <section class="py-16 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-12">What Our Clients Say</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow">
+          <p class="mb-4">"LaboraX provided quick and accurate results. Their staff was professional and courteous."</p>
+          <h4 class="font-semibold">- Dr. Anjali Menon</h4>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <p class="mb-4">"The home sample collection was a lifesaver during my busy schedule. Highly recommend LaboraX."</p>
+          <h4 class="font-semibold">- Rajesh Kumar</h4>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  </main>  <footer>
-    &copy; 2025 PrimeLab Diagnostics. All rights reserved.
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-8">Get in Touch</h2>
+      <form class="grid gap-6">
+        <input type="text" placeholder="Full Name" class="p-4 border border-gray-300 rounded"/>
+        <input type="email" placeholder="Email Address" class="p-4 border border-gray-300 rounded"/>
+        <textarea placeholder="Your Message" rows="5" class="p-4 border border-gray-300 rounded"></textarea>
+        <button type="submit" class="bg-blue-700 text-white py-3 px-6 rounded hover:bg-blue-800 transition">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6 text-center">
+    <p>&copy; 2025 LaboraX Diagnostics. All rights reserved.</p>
   </footer>
+
 </body>
-</html>
+</html>￼Enter      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-2">Pathology</h3>
+          <p>Comprehensive blood, urine, and tissue analysis with rapid turnaround times.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-2">Radiology</h3>
+          <p>Advanced imaging services including MRI, CT scans, and X-rays.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-2">Genetic Testing</h3>
+          <p>Cutting-edge DNA analysis for personalized health insights.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-16 px-6">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-12">Why Choose LaboraX?</h2>
+      <div class="grid md:grid-cols-2 gap-8 text-left">
+        <div>
+          <h3 class="text-xl font-semibold mb-2">State-of-the-Art Equipment</h3>
+          <p>Utilizing the latest technology to ensure accurate and timely results.</p>
+        </div>
+  <div>
+          <h3 class="text-xl font-semibold mb-2">Certified Professionals</h3>
+          <p>Our team comprises experienced and accredited laboratory specialists.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Online Reporting</h3>
+          <p>Access your test results securely through our patient portal.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Home Sample Collection</h3>
+          <p>Convenient at-home sample collection services available upon request.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-16 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-12">What Our Clients Say</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow">
+          <p class="mb-4">"LaboraX provided quick and accurate results. Their staff was professional and courteous."</p>
+          <h4 class="font-semibold">- Dr. Anjali Menon</h4>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
