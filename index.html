@@ -7,7 +7,10 @@
   <style>
     :root {
       --blue: #007BFF;
+      --light-blue: #e6f0ff;
       --font: 'Poppins', sans-serif;
+      --gray: #6c757d;
+      --radius: 12px;
     }* {
   box-sizing: border-box;
   margin: 0;
@@ -25,123 +28,164 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 10%;
+  padding: 1.5rem 10%;
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .logo {
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: var(--blue);
 }
 
 nav a {
-  margin-left: 20px;
+  margin-left: 24px;
   text-decoration: none;
-  color: #333;
+  color: var(--gray);
   font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--blue);
+}
+
+.container {
+  padding: 0 10%;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .hero {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 60px 10%;
+  padding: 80px 0;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .hero-text {
   flex: 1;
-  font-size: 2rem;
-  color: #000;
+  font-size: 2.5rem;
   font-weight: 600;
+  color: #000;
 }
 
 .hero-image {
   flex: 1;
-  text-align: right;
+  text-align: center;
 }
 
 .hero-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
 .services {
-  padding: 60px 10%;
-  background-color: #f9f9f9;
+  background-color: var(--light-blue);
+  padding: 80px 0;
+  border-top: 1px solid #eee;
 }
 
 .services h2 {
   text-align: center;
   margin-bottom: 40px;
+  font-size: 2rem;
   color: var(--blue);
 }
 
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  gap: 30px;
 }
 
 .card {
   background: #fff;
-  padding: 20px;
-  border: 1px solid #eee;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding: 30px;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-icon {
+  font-size: 2rem;
+  color: var(--blue);
+  margin-bottom: 15px;
 }
 
 .about, .contact {
-  padding: 60px 10%;
+  padding: 80px 0;
 }
 
 .about h2, .contact h2 {
   color: var(--blue);
   margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.about p {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--gray);
 }
 
 .contact form {
   display: flex;
   flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+  margin: auto;
 }
 
 .contact input, .contact textarea {
-  margin-bottom: 15px;
-  padding: 10px;
+  padding: 15px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: var(--radius);
   font-size: 1rem;
 }
 
 .contact button {
   background-color: var(--blue);
   color: #fff;
-  padding: 10px;
+  padding: 15px;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  border-radius: var(--radius);
   font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact button:hover {
+  background-color: #0056b3;
 }
 
 footer {
-  background-color: #f0f0f0;
+  background-color: #f8f9fa;
   text-align: center;
-  padding: 20px 10%;
-  font-size: 0.9rem;
+  padding: 30px 10%;
+  font-size: 0.95rem;
+  color: #555;
 }
 
 @media (max-width: 768px) {
   .hero {
     flex-direction: column;
     text-align: center;
-  }
-
-  .hero-image {
-    text-align: center;
-    margin-top: 20px;
   }
 }
 
@@ -155,25 +199,47 @@ footer {
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
-  </header>  <section class="hero">
-    <div class="hero-text">
-      Advanced Medical Testing Solutions
-    </div>
-    <div class="hero-image">
-      <img src="https://via.placeholder.com/500x300?text=Lab+Image" alt="Lab Image">
-    </div>
-  </section>  <section id="services" class="services">
+  </header>  <main class="container">
+    <section class="hero">
+      <div class="hero-text">
+        Advanced Medical Testing<br /> Solutions for a Healthier Tomorrow
+      </div>
+      <div class="hero-image">
+        <img src="https://via.placeholder.com/500x350?text=High-Tech+Lab" alt="Lab Image">
+      </div>
+    </section><section id="services" class="services">
+  <div class="container">
     <h2>Our Services</h2>
     <div class="cards">
-      <div class="card">Blood Testing</div>
-      <div class="card">Genetic Screening</div>
-      <div class="card">Pathology Services</div>
-      <div class="card">COVID-19 Testing</div>
+      <div class="card">
+        <div class="card-icon">🩸</div>
+        <div>Blood Testing</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🧬</div>
+        <div>Genetic Screening</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔬</div>
+        <div>Pathology Services</div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🦠</div>
+        <div>COVID-19 Testing</div>
+      </div>
     </div>
-  </section>  <section id="about" class="about">
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="container">
     <h2>About Us</h2>
-    <p>PrimeLab Diagnostics offers cutting-edge testing solutions with a commitment to precision, reliability, and patient-centric care. Our team of experts utilizes the latest technologies to deliver accurate and timely diagnostic results.</p>
-  </section>  <section id="contact" class="contact">
+    <p>PrimeLab Diagnostics offers cutting-edge medical testing with a commitment to accuracy and efficiency. Our laboratory integrates modern equipment with compassionate care to ensure precise diagnostic results that support better patient outcomes.</p>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container">
     <h2>Contact Us</h2>
     <form>
       <input type="text" placeholder="Your Name" required />
@@ -181,7 +247,10 @@ footer {
       <textarea rows="4" placeholder="Your Message" required></textarea>
       <button type="submit">Send Message</button>
     </form>
-  </section>  <footer>
+  </div>
+</section>
+
+  </main>  <footer>
     &copy; 2025 PrimeLab Diagnostics. All rights reserved.
   </footer>
 </body>
