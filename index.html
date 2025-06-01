@@ -281,6 +281,7 @@
             border-radius: 5px;
             font-size: 1.1em;
             font-weight: 600;
+            cursor: pointer;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
@@ -388,21 +389,23 @@
             }
 
             .header .nav {
-                position: absolute;
-                top: 70px; /* Below header */
+                /* Changed positioning and display for better mobile menu behavior */
+                position: fixed; /* Use fixed to keep it relative to viewport */
+                top: 70px; /* Adjust based on your header's actual height when sticky */
                 left: 0;
                 width: 100%;
+                height: 0; /* Initially hidden height */
                 background: var(--primary-color); /* Dark background for menu */
                 box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-                transform: translateY(-100%); /* Hide menu above viewport */
-                transition: transform 0.3s ease-in-out;
-                z-index: 999; /* Below sticky header, above content */
-                overflow: hidden; /* Hide overflow when closed */
-                padding-bottom: 10px; /* Small padding at bottom when open */
+                overflow: hidden; /* Hide content when height is 0 */
+                transition: height 0.3s ease-in-out; /* Animate height */
+                z-index: 998; /* Below header (1000), above content */
             }
 
             .header .nav.nav-open {
-                transform: translateY(0); /* Show menu */
+                height: auto; /* Allow height to expand based on content */
+                max-height: 80vh; /* Prevents menu from taking up whole screen if too many links */
+                overflow-y: auto; /* Allow scrolling if menu content is too long */
             }
 
             .header .nav ul {
@@ -410,6 +413,7 @@
                 width: 100%;
                 text-align: center;
                 padding: 0;
+                margin: 0; /* Ensure no extra margin pushes content */
             }
 
             .header .nav ul li {
@@ -437,616 +441,7 @@
             .menu-toggle {
                 display: block; /* Show hamburger icon on mobile */
                 color: var(--primary-color); /* Hamburger icon color */
-            }
-
-            /* General mobile adjustments */
-            .hero h1 {
-                font-size: 2.5em;
-            }
-
-            .hero p {
-                font-size: 1em;
-            }
-
-            .section {
-                padding: 60px 0;
-            }
-
-            .about-content, .contact-content {
-                flex-direction: column;
-            }
-
-            .service-item, .expertise-point {
-                width: auto;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 { font-size: 2em; } /* Smaller font for hero on small phones */
-            h2 { font-size: 1.8em; }
-            h3 { font-size: 1.4em; }
-
-            .hero {
-                padding: 80px 15px;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <header class="header container">
-        <div class="logo">Precision Diagnostics Lab</div>
-        <div class="menu-toggle" id="menuToggle">
-            <i class="fas fa-bars"></i> </div>
-        <nav class="nav" id="mainNav">
-            <ul>
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#expertise">Expertise</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="home" class="hero">
-        <h1>Advancing Healthcare Through Precise Diagnostics</h1>
-        <p>Your trusted partner for accurate, reliable, and timely laboratory testing solutions.</p>
-        <a href="#services" class="btn">Explore Our Services</a>
-    </section>
-
-    <section id="services" class="section">
-        <div class="container">
-            <h2>Our Core Laboratory Services</h2>
-            <div class="services-grid">
-                <div class="service-item">
-                    <h3>Clinical Pathology</h3>
-                    <p>Comprehensive blood tests, urine analysis, and other body fluid diagnostics for disease detection and monitoring.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Molecular Diagnostics</h3>
-                    <p>Advanced PCR-based testing for infectious diseases, genetic disorders, and personalized medicine insights.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Microbiology & Culture</h3>
-                    <p>Identification of bacteria, fungi, and viruses, including antibiotic susceptibility testing for effective treatment.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Histopathology & Cytology</h3>
-                    <p>Accurate tissue and cell analysis for cancer diagnosis, inflammatory conditions, and various pathologies.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Toxicology Screening</h3>
-                    <p>Precise detection and quantification of drugs, toxins, and environmental contaminants in biological samples.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Research & Development Support</h3>
-                    <p>Collaborative lab services for academic institutions and biotech companies requiring specialized testing and analysis.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="section">
-        <div class="container">
-            <h2>About Precision Diagnostics Lab</h2>
-            <div class="about-content">
-                <div class="text-block">
-                    <p>Established in 20XX, Precision Diagnostics Lab is committed to delivering unparalleled accuracy and efficiency in laboratory testing. We are a state-of-the-art facility equipped with the latest technology and staffed by a team of highly qualified and experienced pathologists, scientists, and technicians.</p>
-                    <p>Our mission is to provide healthcare professionals and patients with reliable diagnostic information that empowers informed decisions, leading to better health outcomes. We adhere to the highest standards of quality control and ethical practices, ensuring every test result is dependable.</p>
-                    <p>We pride ourselves on our rapid turnaround times, accessible reporting, and a patient-centric approach that puts your health first.</p>
-                </div>
-                <div class="image-block">
-                    <img src="https://via.placeholder.com/400x300/007bff/FFFFFF?text=Our+Team+at+Work" alt="Laboratory Team">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="expertise" class="section">
-        <div class="container">
-            <h2>Why Choose Precision Diagnostics?</h2>
-            <div class="expertise-points">
-                <div class="expertise-point">
-                    <h3>Cutting-Edge Technology</h3>
-                    <p>Utilizing the latest analytical instruments and automated systems for superior accuracy and efficiency.</p>
-                </div>
-                <div class="expertise-point">
-                    <h3>Experienced Professionals</h3>
-                    <p>Our team comprises board-certified pathologists and skilled laboratory scientists with years of expertise.</p>
-                </div>
-                <div class="expertise-point">
-                    <h3>Rigorous Quality Control</h3>
-                    <p>Adherence to international quality standards (e.g., ISO 15189) ensures consistent and reliable results.</p>
-                </div>
-                <div class="expertise-point">
-                    <h3>Rapid Turnaround Times</h3>
-                    <p>Streamlined processes and dedicated logistics ensure timely delivery of critical test results.</p>
-                </div>
-                <div class="expertise-point">
-                    <h3>Patient-Centric Approach</h3>
-                    <p>We prioritize patient comfort and provide clear, understandable reports for better health management.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta">
-        <div class="container">
-            <h2>Ready to Partner for Precise Health Insights?</h2>
-            <p>Whether you're a healthcare provider, researcher, or an individual seeking diagnostic clarity, we are here to assist. Contact us today to discuss your testing needs or schedule a consultation.</p>
-            <a href="#contact" class="btn">Get in Touch</a>
-        </div>
-    </section>
-
-    <section id="contact" class="section">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Our Location & Details</h3>
-                    <p><strong>Precision Diagnostics Lab</strong></p>
-                    <p>123 Lab Street, Science City</p>
-                    <p>Healthville, State 56789</p>
-                    <p>India</p>
-                    <p><a href="tel:+919876543210">Phone: +91 98765 43210</a></p>
-                    <p><a href="mailto:info@precisionlabs.io">Email: info@precisionlabs.io</a></p>
-                    <p><strong>Business Hours:</strong></p>
-                    <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                    <p>Saturday: 9:00 AM - 1:00 PM</p>
-                    <p>Sunday: Closed</p>
-                </div>
-                <div class="contact-form">
-                    <h3>Send Us a Message</h3>
-                    <form action="#" method="POST">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" name="name" required>
-
-                        <label for="email">Your Email</label>
-                        <input type="email" id="email" name="email" required>
-
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" required>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Precision Diagnostics Lab - Your Trusted Partner in Analysis</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #0056b3; /* Darker blue */
-            --secondary-color: #007bff; /* Bright blue */
-            --text-color: #333;
-            --light-text-color: #666;
-            --background-light: #f8f9fa;
-            --background-dark: #e9ecef;
-            --white: #fff;
-            --border-color: #dee2e6;
-        }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-            margin: 0;
-            padding: 0;
-            color: var(--text-color);
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
-
-        a {
-            text-decoration: none;
-            color: var(--secondary-color);
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--primary-color);
-            margin-top: 0;
-            margin-bottom: 0.5em;
-        }
-
-        h1 { font-size: 3em; font-weight: 700; }
-        h2 { font-size: 2.2em; font-weight: 600; }
-        h3 { font-size: 1.8em; font-weight: 600; }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* Header & Navigation */
-        .header {
-            background: var(--white);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            padding: 15px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .header .logo {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.8em;
-            font-weight: 700;
-            color: var(--primary-color);
-            padding-left: 20px; /* Adjust for container padding */
-        }
-
-        .header .nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex; /* Default for desktop */
-        }
-
-        .header .nav ul li {
-            margin-left: 30px;
-        }
-
-        .header .nav ul li a {
-            color: var(--primary-color);
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .header .nav ul li a:hover,
-        .header .nav ul li a.active {
-            color: var(--secondary-color);
-        }
-
-        /* Hamburger Menu Icon */
-        .menu-toggle {
-            display: none; /* Hidden by default on desktop */
-            font-size: 1.8em;
-            color: var(--primary-color);
-            cursor: pointer;
-            padding-right: 20px;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 86, 179, 0.8), rgba(0, 123, 255, 0.8)), url('https://via.placeholder.com/1600x600/0056b3/FFFFFF?text=Modern+Lab+Facility') center/cover no-repeat;
-            color: var(--white);
-            text-align: center;
-            padding: 100px 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 500px;
-        }
-
-        .hero h1 {
-            color: var(--white);
-            font-size: 3.5em;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 1.3em;
-            max-width: 800px;
-            margin-bottom: 40px;
-        }
-
-        .hero .btn {
-            background-color: var(--secondary-color);
-            color: var(--white);
-            padding: 15px 30px;
-            border-radius: 5px;
-            font-size: 1.1em;
-            font-weight: 600;
-            transition: background-color 0.3s ease;
-        }
-
-        .hero .btn:hover {
-            background-color: #0056b3; /* Slightly darker secondary */
-        }
-
-        /* Section Styling */
-        .section {
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .section:nth-of-type(even) {
-            background-color: var(--background-light);
-        }
-
-        .section h2 {
-            margin-bottom: 60px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section h2::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background-color: var(--secondary-color);
-            margin: 10px auto 0;
-        }
-
-        /* Services Section */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .service-item {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-align: left;
-        }
-
-        .service-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-        }
-
-        .service-item h3 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            font-size: 1.6em;
-        }
-
-        .service-item p {
-            color: var(--light-text-color);
-        }
-
-        /* About Us Section */
-        .about-content {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 40px;
-            text-align: left;
-        }
-
-        .about-content .text-block {
-            flex: 2;
-            min-width: 300px;
-        }
-
-        .about-content .image-block {
-            flex: 1;
-            min-width: 250px;
-            text-align: center;
-        }
-
-        .about-content img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        /* Expertise Section */
-        .expertise-points {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 40px;
-        }
-
-        .expertise-point {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            width: 300px;
-            text-align: center;
-        }
-
-        .expertise-point h3 {
-            font-size: 1.4em;
-            margin-bottom: 10px;
-        }
-
-        .expertise-point p {
-            color: var(--light-text-color);
-        }
-
-        /* Call to Action (CTA) Section */
-        .cta {
-            background: var(--primary-color);
-            color: var(--white);
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .cta h2 {
-            color: var(--white);
-            margin-bottom: 20px;
-        }
-        .cta h2::after {
-            background-color: var(--white);
-        }
-
-        .cta p {
-            font-size: 1.2em;
-            max-width: 800px;
-            margin: 0 auto 40px;
-        }
-
-        .cta .btn {
-            background-color: var(--white);
-            color: var(--primary-color);
-            padding: 15px 30px;
-            border: none; /* Added for consistency */
-            border-radius: 5px;
-            font-size: 1.1em;
-            font-weight: 600;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .cta .btn:hover {
-            background-color: var(--background-dark);
-            color: var(--primary-color);
-        }
-
-        /* Contact Section */
-        .contact-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 40px;
-            text-align: left;
-        }
-
-        .contact-info, .contact-form {
-            flex: 1;
-            min-width: 300px;
-            background: var(--white);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-
-        .contact-info h3 {
-            margin-bottom: 20px;
-        }
-
-        .contact-info p {
-            margin-bottom: 10px;
-        }
-
-        .contact-info a {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .contact-form form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .contact-form label {
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        .contact-form input[type="text"],
-        .contact-form input[type="email"],
-        .contact-form textarea {
-            padding: 12px;
-            margin-bottom: 20px;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            font-size: 1em;
-        }
-
-        .contact-form textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .contact-form button {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 15px 25px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.1em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .contact-form button:hover {
-            background-color: var(--secondary-color);
-        }
-
-        /* Footer */
-        .footer {
-            background-color: var(--primary-color);
-            color: var(--white);
-            text-align: center;
-            padding: 40px 20px;
-            font-size: 0.9em;
-        }
-
-        .footer p {
-            margin: 0;
-        }
-
-        /* Responsive adjustments for mobile menu */
-        @media (max-width: 768px) {
-            .header {
-                flex-direction: row; /* Keep logo and hamburger side-by-side */
-                justify-content: space-between; /* Space out logo and toggle */
-                align-items: center;
-                padding: 15px 20px;
-            }
-
-            .header .logo {
-                padding-left: 0;
-            }
-
-            .header .nav {
-                position: absolute;
-                top: 70px; /* Below header */
-                left: 0;
-                width: 100%;
-                background: var(--primary-color); /* Dark background for menu */
-                box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-                transform: translateY(-100%); /* Hide menu above viewport */
-                transition: transform 0.3s ease-in-out;
-                z-index: 999; /* Below sticky header, above content */
-                overflow: hidden; /* Hide overflow when closed */
-                padding-bottom: 10px; /* Small padding at bottom when open */
-            }
-
-            .header .nav.nav-open {
-                transform: translateY(0); /* Show menu */
-            }
-
-            .header .nav ul {
-                flex-direction: column; /* Stack links vertically */
-                width: 100%;
-                text-align: center;
-                padding: 0;
-            }
-
-            .header .nav ul li {
-                margin: 0;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Separator for links */
-            }
-
-            .header .nav ul li:last-child {
-                border-bottom: none;
-            }
-
-            .header .nav ul li a {
-                display: block; /* Make entire li clickable */
-                padding: 15px 20px;
-                color: var(--white); /* White links on dark background */
-                transition: background-color 0.3s ease;
-            }
-
-            .header .nav ul li a:hover,
-            .header .nav ul li a.active {
-                background-color: var(--secondary-color); /* Highlight active/hovered link */
-                color: var(--white);
-            }
-
-            .menu-toggle {
-                display: block; /* Show hamburger icon on mobile */
-                color: var(--primary-color); /* Hamburger icon color */
+                padding-right: 20px; /* Added for consistency */
             }
 
             /* General mobile adjustments */
@@ -1240,31 +635,34 @@
         const menuToggle = document.getElementById('menuToggle');
         const mainNav = document.getElementById('mainNav');
 
-        menuToggle.addEventListener('click', () => {
-            mainNav.classList.toggle('nav-open');
-        });
-
-        // Smooth scrolling for navigation links and close menu on click
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                // Close the mobile menu if it's open
-                if (mainNav.classList.contains('nav-open')) {
-                    mainNav.classList.remove('nav-open');
-                }
-
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-
-                // Remove active class from all and add to clicked
-                document.querySelectorAll('nav a').forEach(link => {
-                    link.classList.remove('active');
-                });
-                this.classList.add('active');
+        if (menuToggle && mainNav) { // Ensure elements exist before adding listeners
+            menuToggle.addEventListener('click', () => {
+                mainNav.classList.toggle('nav-open'); // Toggles the 'nav-open' class
             });
-        });
+
+            // Close menu when a navigation link is clicked (on mobile)
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    // Close the mobile menu if it's open
+                    if (mainNav.classList.contains('nav-open')) {
+                        mainNav.classList.remove('nav-open');
+                    }
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+
+                    // Remove active class from all and add to clicked
+                    document.querySelectorAll('nav a').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                });
+            });
+        }
+
 
         // Highlight active nav link on scroll
         window.addEventListener('scroll', () => {
@@ -1296,55 +694,3 @@
     </script>
 </body>
 </html>
-￼Enter                        <label for="message">Your Message</label>
-                        <textarea id="message" name="message" required></textarea>
-
-                        <button type="submit">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Precision Diagnostics Lab. All rights reserved.</p>
-            <p>Designed with care by [Your Name/Company Name]</p>
-        </div>
-    </footer>
-
-    <script>
-        // Hamburger menu toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const mainNav = document.getElementById('mainNav');
-
-        menuToggle.addEventListener('click', () => {
-            mainNav.classList.toggle('nav-open');
-        });
-
-  // Smooth scrolling for navigation links and close menu on click
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                // Close the mobile menu if it's open
-                if (mainNav.classList.contains('nav-open')) {
-                    mainNav.classList.remove('nav-open');
-                }
-
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-
-                // Remove active class from all and add to clicked
-                document.querySelectorAll('nav a').forEach(link => {
-                    link.classList.remove('active');
-                });
-                this.classList.add('active');
-            });
-        });
-
-        // Highlight active nav link on scroll
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('nav a');
