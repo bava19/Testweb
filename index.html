@@ -3,184 +3,311 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>LaboraX - Advanced Diagnostics Lab</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>LaboraX - Precision Diagnostics</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
+      margin: 0;
       font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f9f9f9;
+    }
+    header {
+      background: linear-gradient(to right, #3b82f6, #9333ea);
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px 60px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.1rem;
+      margin: 10px 0 20px;
+    }
+    .btn {
+      background-color: white;
+      color: #3b82f6;
+      padding: 10px 20px;
+      border-radius: 20px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .services, .features, .testimonials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      flex: 1 1 250px;
+      max-width: 300px;
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    .contact-form button {
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    footer {
+      background-color: #1e1e2f;
+      color: #aaa;
+      text-align: center;
+      padding: 30px 10px;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 768px) {
+      .services, .features, .testimonials {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
-</head>
-<body class="bg-white text-gray-800">
-
-  <!-- Hero Section -->
-  <section class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20 px-6">
-    <div class="max-w-7xl mx-auto text-center">
-      <h1 class="text-4xl md:text-6xl font-bold mb-4">LaboraX</h1>
-      <p class="text-xl md:text-2xl mb-6">Precision Diagnostics for a Healthier Tomorrow</p>
-      <a href="#contact" class="bg-white text-blue-700 font-semibold py-3 px-6 rounded-full hover:bg-gray-100 transition">Book a Test</a>
-    </div>
-  </section>
-
-  <!-- Services Section -->
-  <section class="py-16 px-6 bg-gray-50">
-    <div class="max-w-6xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-12">Our Services</h2>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>LaboraX - Advanced Diagnostics Lab</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>LaboraX - Precision Diagnostics</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
+      margin: 0;
       font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f9f9f9;
+    }
+    header {
+      background: linear-gradient(to right, #3b82f6, #9333ea);
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px 60px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.1rem;
+      margin: 10px 0 20px;
+    }
+    .btn {
+      background-color: white;
+      color: #3b82f6;
+      padding: 10px 20px;
+      border-radius: 20px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .services, .features, .testimonials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      flex: 1 1 250px;
+      max-width: 300px;
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    .contact-form button {
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    footer {
+      background-color: #1e1e2f;
+      color: #aaa;
+      text-align: center;
+      padding: 30px 10px;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 768px) {
+      .services, .features, .testimonials {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
-<body class="bg-white text-gray-800">
+<body>
 
-  <!-- Hero Section -->
-  <section class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20 px-6">
-    <div class="max-w-7xl mx-auto text-center">
-      <h1 class="text-4xl md:text-6xl font-bold mb-4">LaboraX</h1>
-      <p class="text-xl md:text-2xl mb-6">Precision Diagnostics for a Healthier Tomorrow</p>
-      <a href="#contact" class="bg-white text-blue-700 font-semibold py-3 px-6 rounded-full hover:bg-gray-100 transition">Book a Test</a>
-    </div>
-  </section>
+  <header>
+    <h1>LaboraX</h1>
+    <p>Precision Diagnostics for a Healthier Tomorrow</p>
+    <a href="#contact" class="btn">Book a Test</a>
+  </header>
 
-  <!-- Services Section -->
-  <section class="py-16 px-6 bg-gray-50">
-    <div class="max-w-6xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-12">Our Services</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-semibold mb-2">Pathology</h3>
-          <p>Comprehensive blood, urine, and tissue analysis with rapid turnaround times.</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-semibold mb-2">Radiology</h3>
-          <p>Advanced imaging services including MRI, CT scans, and X-rays.</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-semibold mb-2">Genetic Testing</h3>
-          <p>Cutting-edge DNA analysis for personalized health insights.</p>
-        </div>
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="card">
+        <h3>Pathology</h3>
+        <p>Comprehensive blood, urine, and tissue analysis with quick turnaround time.</p>
+      </div>
+      <div class="card">
+        <h3>Radiology</h3>
+        <p>Advanced imaging services including MRI, CT scans, and X-rays.</p>
+      </div>
+      <div class="card">
+        <h3>Genetic Testing</h3>
+        <p>Cutting-edge DNA analysis for personalized health insights.</p>
       </div>
     </div>
   </section>
 
-  <!-- Features Section -->
-  <section class="py-16 px-6">
-    <div class="max-w-6xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-12">Why Choose LaboraX?</h2>
-      <div class="grid md:grid-cols-2 gap-8 text-left">
-        <div>
-          <h3 class="text-xl font-semibold mb-2">State-of-the-Art Equipment</h3>
-          <p>Utilizing the latest technology to ensure accurate and timely results.</p>
-        </div>
-        <div>
-          <h3 class="text-xl font-semibold mb-2">Certified Professionals</h3>
-          <p>Our team comprises experienced and accredited laboratory specialists.</p>
-        </div>
-        <div>
-          <h3 class="text-xl font-semibold mb-2">Online Reporting</h3>
-          <p>Access your test results securely through our patient portal.</p>
-        </div>
-        <div>
-          <h3 class="text-xl font-semibold mb-2">Home Sample Collection</h3>
-          <p>Convenient at-home sample collection services available upon request.</p>
-        </div>
+  <section id="why">
+    <h2>Why Choose LaboraX?</h2>
+    <div class="features">
+      <div class="card">
+        <h4>State-of-the-Art Equipment</h4>
+        <p>We use the latest technology for accurate and timely results.</p>
+      </div>
+      <div class="card">
+        <h4>Certified Professionals</h4>
+        <p>Our team includes experienced and accredited lab specialists.</p>
+      </div>
+      <div class="card">
+        <h4>Online Reporting</h4>
+        <p>Access your reports securely through our digital portal.</p>
+      </div>
+      <div class="card">
+        <h4>Home Sample Collection</h4>
+        <p>Convenient home sample collection services available.</p>
       </div>
     </div>
   </section>
 
-  <!-- Testimonials Section -->
-  <section class="py-16 px-6 bg-gray-50">
-    <div class="max-w-6xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-12">What Our Clients Say</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-white p-6 rounded-lg shadow">
-          <p class="mb-4">"LaboraX provided quick and accurate results. Their staff was professional and courteous."</p>
-          <h4 class="font-semibold">- Dr. Anjali Menon</h4>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow">
-          <p class="mb-4">"The home sample collection was a lifesaver during my busy schedule. Highly recommend LaboraX."</p>
-          <h4 class="font-semibold">- Rajesh Kumar</h4>
-        </div>
+  <section id="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonials">
+      <div class="card">
+        <p>"LaboraX delivered fast and accurate results. Truly professional and reliable."</p>
+        <strong>- Dr. Anjali Menon</strong>
+      </div>
+      <div class="card">
+        <p>"The home collection was a lifesaver during my busy schedule. Highly recommend LaboraX."</p>
+        <strong>- Rajesh Kumar</strong>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-16 px-6">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-8">Get in Touch</h2>
-      <form class="grid gap-6">
-        <input type="text" placeholder="Full Name" class="p-4 border border-gray-300 rounded"/>
-        <input type="email" placeholder="Email Address" class="p-4 border border-gray-300 rounded"/>
-        <textarea placeholder="Your Message" rows="5" class="p-4 border border-gray-300 rounded"></textarea>
-        <button type="submit" class="bg-blue-700 text-white py-3 px-6 rounded hover:bg-blue-800 transition">Send Message</button>
-      </form>
-    </div>
+  <section id="contact">
+    <h2>Get in Touch</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Full Name" required />
+      <input type="email" placeholder="Email Address" required />
+      <textarea rows="4" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-6 text-center">
-    <p>&copy; 2025 LaboraX Diagnostics. All rights reserved.</p>
+  <footer>
+    © 2025 LaboraX Diagnostics. All rights reserved.
   </footer>
 
 </body>
-</html>￼Enter      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-semibold mb-2">Pathology</h3>
-          <p>Comprehensive blood, urine, and tissue analysis with rapid turnaround times.</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-semibold mb-2">Radiology</h3>
-          <p>Advanced imaging services including MRI, CT scans, and X-rays.</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-semibold mb-2">Genetic Testing</h3>
-          <p>Cutting-edge DNA analysis for personalized health insights.</p>
-        </div>
+</html>￼Enter</head>
+<body>
+
+  <header>
+    <h1>LaboraX</h1>
+    <p>Precision Diagnostics for a Healthier Tomorrow</p>
+    <a href="#contact" class="btn">Book a Test</a>
+  </header>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="card">
+        <h3>Pathology</h3>
+        <p>Comprehensive blood, urine, and tissue analysis with quick turnaround time.</p>
+      </div>
+      <div class="card">
+        <h3>Radiology</h3>
+        <p>Advanced imaging services including MRI, CT scans, and X-rays.</p>
+      </div>
+      <div class="card">
+        <h3>Genetic Testing</h3>
+        <p>Cutting-edge DNA analysis for personalized health insights.</p>
+      </div>
+    </div>
+  </section>
+ction id="why">
+    <h2>Why Choose LaboraX?</h2>
+    <div class="features">
+      <div class="card">
+        <h4>State-of-the-Art Equipment</h4>
+        <p>We use the latest technology for accurate and timely results.</p>
+      </div>
+      <div class="card">
+        <h4>Certified Professionals</h4>
+        <p>Our team includes experienced and accredited lab specialists.</p>
+      </div>
+      <div class="card">
+        <h4>Online Reporting</h4>
+        <p>Access your reports securely through our digital portal.</p>
+      </div>
+      <div class="card">
+        <h4>Home Sample Collection</h4>
+        <p>Convenient home sample collection services available.</p>
       </div>
     </div>
   </section>
 
-  <!-- Features Section -->
-  <section class="py-16 px-6">
-    <div class="max-w-6xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-12">Why Choose LaboraX?</h2>
-      <div class="grid md:grid-cols-2 gap-8 text-left">
-        <div>
-          <h3 class="text-xl font-semibold mb-2">State-of-the-Art Equipment</h3>
-          <p>Utilizing the latest technology to ensure accurate and timely results.</p>
-        </div>
-  <div>
-          <h3 class="text-xl font-semibold mb-2">Certified Professionals</h3>
-          <p>Our team comprises experienced and accredited laboratory specialists.</p>
-        </div>
-        <div>
-          <h3 class="text-xl font-semibold mb-2">Online Reporting</h3>
-          <p>Access your test results securely through our patient portal.</p>
-        </div>
-        <div>
-          <h3 class="text-xl font-semibold mb-2">Home Sample Collection</h3>
-          <p>Convenient at-home sample collection services available upon request.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section class="py-16 px-6 bg-gray-50">
-    <div class="max-w-6xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-12">What Our Clients Say</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-white p-6 rounded-lg shadow">
-          <p class="mb-4">"LaboraX provided quick and accurate results. Their staff was professional and courteous."</p>
-          <h4 class="font-semibold">- Dr. Anjali Menon</h4>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow">
+  <section id="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonials">
