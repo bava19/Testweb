@@ -1,0 +1,204 @@
+    /* Header & Navigation */
+    .header {
+        background: var(--white);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        padding: 15px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* ... (rest of your desktop CSS remains the same) ... */
+
+    /* Responsive adjustments for mobile menu */
+    @media (max-width: 768px) {
+        .header {
+            flex-direction: row; /* Keep logo and hamburger side-by-side */
+            justify-content: space-between; /* Space out logo and toggle */
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .header .logo {
+            padding-left: 0;
+        }
+
+        .header .nav {
+            /* Changed positioning and display for better mobile menu behavior */
+            position: fixed; /* Use fixed to keep it relative to viewport */
+            top: 70px; /* Adjust based on your header's actual height when sticky */
+            left: 0;
+            width: 100%;
+            height: 0; /* Initially hidden height */
+            background: var(--primary-color); /* Dark background for menu */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    /* Header & Navigation */
+    .header {
+        background: var(--white);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        padding: 15px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* ... (rest of your desktop CSS remains the same) ... */
+
+    /* Responsive adjustments for mobile menu */
+    @media (max-width: 768px) {
+        .header {
+            flex-direction: row; /* Keep logo and hamburger side-by-side */
+            justify-content: space-between; /* Space out logo and toggle */
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .header .logo {
+            padding-left: 0;
+        }
+
+        .header .nav {
+            /* Changed positioning and display for better mobile menu behavior */
+            position: fixed; /* Use fixed to keep it relative to viewport */
+            top: 70px; /* Adjust based on your header's actual height when sticky */
+            left: 0;
+            width: 100%;
+            height: 0; /* Initially hidden height */
+            background: var(--primary-color); /* Dark background for menu */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            overflow: hidden; /* Hide content when height is 0 */
+            transition: height 0.3s ease-in-out; /* Animate height */
+            z-index: 998; /* Below header (1000), above content */
+        }
+
+        .header .nav.nav-open {
+            height: auto; /* Allow height to expand based on content */
+            max-height: 80vh; /* Prevents menu from taking up whole screen if too many links */
+            overflow-y: auto; /* Allow scrolling if menu content is too long */
+        }
+
+        .header .nav ul {
+            flex-direction: column; /* Stack links vertically */
+            width: 100%;
+            text-align: center;
+            padding: 0;
+            margin: 0; /* Ensure no extra margin pushes content */
+        }
+
+        .header .nav ul li {
+            margin: 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Separator for links */
+        }
+
+        .header .nav ul li:last-child {
+            border-bottom: none;
+        }
+
+        .header .nav ul li a {
+            display: block; /* Make entire li clickable */
+            padding: 15px 20px;
+            color: var(--white); /* White links on dark background */
+            transition: background-color 0.3s ease;
+        }
+
+        .header .nav ul li a:hover,
+        .header .nav ul li a.active {
+            background-color: var(--secondary-color); /* Highlight active/hovered link */
+            color: var(--white);
+        }
+
+        .menu-toggle {
+            display: block; /* Show hamburger icon on mobile */
+            color: var(--primary-color); /* Hamburger icon color */
+            padding-right: 20px; /* Added for consistency */
+        }
+
+        /* General mobile adjustments */
+        .hero h1 {
+            font-size: 2.5em;
+        }
+
+        .hero p {
+            font-size: 1em;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .about-content, .contact-content {
+            flex-direction: column;
+        }
+
+        .service-item, .expertise-point {
+            width: auto;
+        }
+    }
+
+    @media (max-width: 480px) {
+        h1 { font-size: 2em; } /* Smaller font for hero on small phones */
+        h2 { font-size: 1.8em; }
+        h3 { font-size: 1.4em; }
+
+        .hero {
+            padding: 80px 15px;
+        }
+    }
+￼Enter            overflow: hidden; /* Hide content when height is 0 */
+            transition: height 0.3s ease-in-out; /* Animate height */
+            z-index: 998; /* Below header (1000), above content */
+        }
+
+        .header .nav.nav-open {
+            height: auto; /* Allow height to expand based on content */
+            max-height: 80vh; /* Prevents menu from taking up whole screen if too many links */
+            overflow-y: auto; /* Allow scrolling if menu content is too long */
+        }
+
+        .header .nav ul {
+            flex-direction: column; /* Stack links vertically */
+            width: 100%;
+            text-align: center;
+            padding: 0;
+            margin: 0; /* Ensure no extra margin pushes content */
+        }
+
+        .header .nav ul li {
+            margin: 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Separator for links */
+        }
+
+        .header .nav ul li:last-child {
+            border-bottom: none;
+  }
+
+        .header .nav ul li a {
+            display: block; /* Make entire li clickable */
+            padding: 15px 20px;
+            color: var(--white); /* White links on dark background */
+            transition: background-color 0.3s ease;
+        }
+
+        .header .nav ul li a:hover,
+        .header .nav ul li a.active {
+            background-color: var(--secondary-color); /* Highlight active/hovered link */
+            color: var(--white);
+        }
+
+        .menu-toggle {
+            display: block; /* Show hamburger icon on mobile */
+            color: var(--primary-color); /* Hamburger icon color */
+            padding-right: 20px; /* Added for consistency */
+        }
+
+        /* General mobile adjustments */
+        .hero h1 {
+            font-size: 2.5em;
+        }
+
