@@ -3,711 +3,310 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adithi Diagnostics - Your Health, Our Priority</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <title>Quarter - Real Estate Agency</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #0056b3; /* Darker blue */
-            --secondary-color: #007bff; /* Bright blue */
-            --text-color: #333;
-            --light-text-color: #666;
-            --background-light: #f8f9fa;
-            --background-dark: #e9ecef;
-            --white: #fff;
-            --border-color: #dee2e6;
-        }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-            margin: 0;
-            padding: 0;
-            color: var(--text-color);
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
-
-        a {
-            text-decoration: none;
-            color: var(--secondary-color);
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--primary-color);
-            margin-top: 0;
-            margin-bottom: 0.5em;
-        }
-
-        h1 { font-size: 3em; font-weight: 700; }
-        h2 { font-size: 2.2em; font-weight: 600; }
-        h3 { font-size: 1.8em; font-weight: 600; }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* Header & Navigation */
-        .header {
-            background: var(--white);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            padding: 15px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .header .logo {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.8em;
-            font-weight: 700;
-            color: var(--primary-color);
-            padding-left: 20px; /* Adjust for container padding */
-        }
-
-        .header .nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex; /* Default for desktop */
-        }
-
-        .header .nav ul li {
-            margin-left: 30px;
-        }
-
-        .header .nav ul li a {
-            color: var(--primary-color);
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .header .nav ul li a:hover,
-        .header .nav ul li a.active {
-            color: var(--secondary-color);
-        }
-
-        /* Hamburger Menu Icon */
-        .menu-toggle {
-            display: none; /* Hidden by default on desktop */
-            font-size: 1.8em;
-            color: var(--primary-color);
-            cursor: pointer;
-            padding-right: 20px;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 86, 179, 0.8), rgba(0, 123, 255, 0.8)), url('https://via.placeholder.com/1600x600/0056b3/FFFFFF?text=Adithi+Diagnostics+Facility') center/cover no-repeat; /* Updated placeholder text */
-            color: var(--white);
-            text-align: center;
-            padding: 100px 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 500px;
-        }
-
-        .hero h1 {
-            color: var(--white);
-            font-size: 3.5em;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 1.3em;
-            max-width: 800px;
-            margin-bottom: 40px;
-        }
-
-        .hero .btn {
-            background-color: var(--secondary-color);
-            color: var(--white);
-            padding: 15px 30px;
-            border-radius: 5px;
-            font-size: 1.1em;
-            font-weight: 600;
-            transition: background-color 0.3s ease;
-        }
-
-        .hero .btn:hover {
-            background-color: #0056b3; /* Slightly darker secondary */
-        }
-
-        /* Section Styling */
-        .section {
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .section:nth-of-type(even) {
-            background-color: var(--background-light);
-        }
-
-        .section h2 {
-            margin-bottom: 60px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section h2::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background-color: var(--secondary-color);
-            margin: 10px auto 0;
-        }
-
-        /* Services Section */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .service-item {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-align: left;
-        }
-
-        .service-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-        }
-
-        .service-item h3 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            font-size: 1.6em;
-        }
-
-        .service-item p {
-            color: var(--light-text-color);
-        }
-
-        /* About Us Section */
-        .about-content {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 40px;
-            text-align: left;
-        }
-
-        .about-content .text-block {
-            flex: 2;
-            min-width: 300px;
-        }
-
-        .about-content .image-block {
-            flex: 1;
-            min-width: 250px;
-            text-align: center;
-        }
-
-        .about-content img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        /* Expertise Section */
-        .expertise-points {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 40px;
-        }
-
-        .expertise-point {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            width: 300px;
-            text-align: center;
-        }
-
-        .expertise-point h3 {
-            font-size: 1.4em;
-            margin-bottom: 10px;
-        }
-
-        .expertise-point p {
-            color: var(--light-text-color);
-        }
-
-        /* Call to Action (CTA) Section */
-        .cta {
-            background: var(--primary-color);
-            color: var(--white);
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .cta h2 {
-            color: var(--white);
-            margin-bottom: 20px;
-        }
-        .cta h2::after {
-            background-color: var(--white);
-        }
-
-        .cta p {
-            font-size: 1.2em;
-            max-width: 800px;
-            margin: 0 auto 40px;
-        }
-
-        .cta .btn {
-            background-color: var(--white);
-            color: var(--primary-color);
-            padding: 15px 30px;
-            border: none; /* Added for consistency */
-            border-radius: 5px;
-            font-size: 1.1em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .cta .btn:hover {
-            background-color: var(--background-dark);
-            color: var(--primary-color);
-        }
-
-        /* Contact Section */
-        .contact-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 40px;
-            text-align: left;
-        }
-
-        .contact-info { /* Existing contact info block */
-            flex: 1;
-            min-width: 300px;
-            background: var(--white);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-
-        .contact-info h3 {
-            margin-bottom: 20px;
-        }
-
-        .contact-info p {
-            margin-bottom: 10px;
-        }
-
-        .contact-info a {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        /* Testimonials block styling - NEW */
-        .testimonials-block {
-            flex: 1; /* Occupy same space as contact-info */
-            min-width: 300px;
-            background: var(--white);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-
-        .testimonials-block h3 {
-            margin-bottom: 20px;
-            text-align: center; /* Center heading for testimonials */
-        }
-
-        .testimonial-item {
-            margin-bottom: 25px;
-            padding-bottom: 25px;
-            border-bottom: 1px solid var(--background-dark); /* Subtle separator */
-            text-align: left; /* Align text within testimonial */
-        }
-
-        .testimonial-item:last-child {
-            border-bottom: none; /* No border for the last one */
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .testimonial-item .stars {
-            color: gold; /* Star color */
-            font-size: 1em;
-            margin-bottom: 8px;
-        }
-
-        .testimonial-item .review-text {
-            font-style: italic;
-            color: var(--light-text-color);
-            margin-bottom: 10px;
-        }
-
-        .testimonial-item .reviewer-name {
-            font-weight: 600;
-            color: var(--primary-color);
-            font-size: 0.95em;
-        }
-
-
-        /* Footer */
-        .footer {
-            background-color: var(--primary-color);
-            color: var(--white);
-            text-align: center;
-            padding: 40px 20px;
-            font-size: 0.9em;
-        }
-
-        .footer p {
-            margin: 0;
-        }
-
-        /* Responsive adjustments for mobile menu */
-        @media (max-width: 768px) {
-            .header {
-                flex-direction: row; /* Keep logo and hamburger side-by-side */
-                justify-content: space-between; /* Space out logo and toggle */
-                align-items: center;
-                padding: 15px 20px;
-            }
-
-            .header .logo {
-                padding-left: 0;
-            }
-
-            .header .nav {
-                /* Changed positioning and display for better mobile menu behavior */
-                position: fixed; /* Use fixed to keep it relative to viewport */
-                top: 70px; /* Adjust based on your header's actual height when sticky */
-                left: 0;
-                width: 100%;
-                height: 0; /* Initially hidden height */
-                background: var(--primary-color); /* Dark background for menu */
-                box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-                overflow: hidden; /* Hide content when height is 0 */
-                transition: height 0.3s ease-in-out; /* Animate height */
-                z-index: 998; /* Below header (1000), above content */
-            }
-
-            .header .nav.nav-open {
-                height: auto; /* Allow height to expand based on content */
-                max-height: 80vh; /* Prevents menu from taking up whole screen if too many links */
-                overflow-y: auto; /* Allow scrolling if menu content is too long */
-            }
-
-            .header .nav ul {
-                flex-direction: column; /* Stack links vertically */
-                width: 100%;
-                text-align: center;
-                padding: 0;
-                margin: 0; /* Ensure no extra margin pushes content */
-            }
-
-            .header .nav ul li {
-                margin: 0;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Separator for links */
-            }
-
-            .header .nav ul li:last-child {
-                border-bottom: none;
-            }
-
-            .header .nav ul li a {
-                display: block; /* Make entire li clickable */
-                padding: 15px 20px;
-                color: var(--white); /* White links on dark background */
-                transition: background-color 0.3s ease;
-            }
-
-            .header .nav ul li a:hover,
-            .header .nav ul li a.active {
-                background-color: var(--secondary-color); /* Highlight active/hovered link */
-                color: var(--white);
-            }
-
-            .menu-toggle {
-                display: block; /* Show hamburger icon on mobile */
-                color: var(--primary-color); /* Hamburger icon color */
-                padding-right: 20px; /* Added for consistency */
-            }
-
-            /* General mobile adjustments */
-            .hero h1 {
-                font-size: 2.5em;
-            }
-
-            .hero p {
-                font-size: 1em;
-            }
-
-            .section {
-                padding: 60px 0;
-            }
-
-            .about-content, .contact-content {
-                flex-direction: column;
-            }
-
-            .service-item, .expertise-point {
-                width: auto;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 { font-size: 2em; } /* Smaller font for hero on small phones */
-            h2 { font-size: 1.8em; }
-            h3 { font-size: 1.4em; }
-
-            .hero {
-                padding: 80px 15px;
-            }
-        }
-    </style>
 </head>
 <body>
 
-    <header class="header container">
-        <div class="logo">Adithi Diagnostics</div>
-        <div class="menu-toggle" id="menuToggle">
-            <i class="fas fa-bars"></i> </div>
-        <nav class="nav" id="mainNav">
-            <ul>
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#expertise">Why Adithi</a></li>
-                <li><a href="#contact">Contact & Reviews</a></li> </ul>
-        </nav>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-home"></i> Quarter
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#properties">Shop</a></li>
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#">Pages <i class="fas fa-caret-down"></i></a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
     </header>
 
-    <section id="home" class="hero">
-        <h1>Adithi Diagnostics: Your Health, Our Priority</h1>
-        <p>Precision diagnosis for accurate insights and better health outcomes.</p>
-        <a href="#contact" class="btn">Book an Appointment</a>
-    </section>
-
-    <section id="services" class="section">
+    <section class="hero-section" id="home">
         <div class="container">
-            <h2>Our Comprehensive Services</h2>
-            <div class="services-grid">
-                <div class="service-item">
-                    <h3>Clinical Pathology</h3>
-                    <p>Complete blood count, urine analysis, blood sugar tests, liver and kidney function tests, thyroid function tests, lipid profile, and other routine tests.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Microbiology & Infectious Diseases</h3>
-                    <p>Tests for identifying bacterial, viral, and fungal infections, including culture and sensitivity testing.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Radiology & Advanced Imaging</h3>
-                    <p>Comprehensive X-ray, Ultrasound Scan, and Doppler Studies for detailed internal body imaging.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Cardiology Diagnostics</h3>
-                    <p>Specialized tests like ECG, Echocardiography, and Treadmill Test (TMT) for cardiac health assessment.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Comprehensive Health Packages</h3>
-                    <p>Customized health check-up packages for comprehensive health assessment, tailored to different age groups and needs.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Home Sample Collection</h3>
-                    <p>Convenient home collection service for all types of laboratory tests, ensuring comfort and safety.</p>
-                </div>
+            <div class="hero-content">
+                <h1>Find Your Dream House By Us</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <button class="btn primary-btn">Make An Inquiry</button>
+            </div>
+            <div class="hero-image">
+                <img src="https://via.placeholder.com/600x400/F0F0F0/000000?text=Modern+House" alt="Modern House">
             </div>
         </div>
     </section>
 
-    <section id="about" class="section">
+    <section class="search-filter-section">
         <div class="container">
-            <h2>About Adithi Diagnostics</h2>
+            <div class="filter-group">
+                <label for="area">Choose Area</label>
+                <select id="area">
+                    <option value="">Any Area</option>
+                    <option value="new-york">New York</option>
+                    <option value="london">London</option>
+                    <option value="paris">Paris</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="status">Property Status</label>
+                <select id="status">
+                    <option value="">Any Status</option>
+                    <option value="for-sale">For Sale</option>
+                    <option value="for-rent">For Rent</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="type">Property Type</label>
+                <select id="type">
+                    <option value="">Any Type</option>
+                    <option value="house">House</option>
+                    <option value="apartment">Apartment</option>
+                    <option value="villa">Villa</option>
+                </select>
+            </div>
+            <button class="btn primary-btn find-now-btn">Find Now</button>
+        </div>
+    </section>
+
+    <section class="about-us-section" id="about">
+        <div class="container">
+            <div class="about-image">
+                <img src="https://via.placeholder.com/500x500/F0F0F0/000000?text=Interior+View" alt="Interior View">
+            </div>
             <div class="about-content">
-                <div class="text-block">
-                    <p>Adithi Diagnostics is a leading diagnostic center dedicated to providing high-quality, accurate, and reliable diagnostic services. With state-of-the-art technology and a team of highly qualified and experienced professionals, we are committed to delivering precise results that aid in effective patient care.</p>
-                    <p>Our mission is to offer comprehensive diagnostic solutions under one roof, ensuring convenience, affordability, and timely reporting. We uphold stringent quality control measures and maintain ethical standards to ensure patient trust and satisfaction.</p>
-                    <p>We strive to be your preferred partner in health, providing a seamless diagnostic experience with a focus on patient well-being.</p>
+                <h2>The Leading Real Estate Rental Marketplace.</h2>
+                <p>Over 35,000 people work for us in more than 70 countries all over the [missing text from image] world, combined with specialized services.</p>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-home"></i> Smart Home Design
+                    </div>
+                    <div class="feature-item">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quarter - Real Estate Agency</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-home"></i> Quarter
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#properties">Shop</a></li>
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#">Pages <i class="fas fa-caret-down"></i></a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Find Your Dream House By Us</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <button class="btn primary-btn">Make An Inquiry</button>
+            </div>
+            <div class="hero-image">
+                <img src="https://via.placeholder.com/600x400/F0F0F0/000000?text=Modern+House" alt="Modern House">
+            </div>
+        </div>
+    </section>
+
+    <section class="search-filter-section">
+        <div class="container">
+            <div class="filter-group">
+                <label for="area">Choose Area</label>
+                <select id="area">
+                    <option value="">Any Area</option>
+                    <option value="new-york">New York</option>
+                    <option value="london">London</option>
+                    <option value="paris">Paris</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="status">Property Status</label>
+                <select id="status">
+                    <option value="">Any Status</option>
+                    <option value="for-sale">For Sale</option>
+                    <option value="for-rent">For Rent</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="type">Property Type</label>
+                <select id="type">
+                    <option value="">Any Type</option>
+                    <option value="house">House</option>
+                    <option value="apartment">Apartment</option>
+                    <option value="villa">Villa</option>
+                </select>
+            </div>
+            <button class="btn primary-btn find-now-btn">Find Now</button>
+        </div>
+    </section>
+
+    <section class="about-us-section" id="about">
+        <div class="container">
+            <div class="about-image">
+                <img src="https://via.placeholder.com/500x500/F0F0F0/000000?text=Interior+View" alt="Interior View">
+            </div>
+            <div class="about-content">
+                <h2>The Leading Real Estate Rental Marketplace.</h2>
+                <p>Over 35,000 people work for us in more than 70 countries all over the [missing text from image] world, combined with specialized services.</p>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-home"></i> Smart Home Design
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-map-marker-alt"></i> Beautiful Scene Around
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-life-ring"></i> Exceptional Lifestyle
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-lock"></i> Complete 24/7 Security
+                    </div>
                 </div>
-                <div class="image-block">
-                    <img src="https://via.placeholder.com/400x300/007bff/FFFFFF?text=Adithi+Team+at+Work" alt="Adithi Diagnostics Team">
+                <p class="quote">"Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui."</p>
+                <button class="btn primary-btn">Our Services</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="statistics-section">
+        <div class="container">
+            <div class="stat-item">
+                <i class="fas fa-building"></i>
+                <h3>560+</h3>
+                <p>Total Area Sq</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-city"></i>
+                <h3>197K+</h3>
+                <p>Apartments Sold</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-hard-hat"></i>
+                <h3>268+</h3>
+                <p>Total Constructions</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-chair"></i>
+                <h3>340+</h3>
+                <p>Apartx Rooms</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="properties-section" id="properties">
+        <div class="container">
+            <h2>Today Sells Properties</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, fuga?</p>
+            <div class="property-grid">
+                <div class="property-card">
+                    <img src="https://via.placeholder.com/350x250/F0F0F0/000000?text=Property+1" alt="Property 1">
+                    <h4>Luxury Villa</h4>
+                    <p>Price: $1,200,000</p>
+                </div>
+                <div class="property-card">
+                    <img src="https://via.placeholder.com/350x250/F0F0F0/000000?text=Property+2" alt="Property 2">
+                    <h4>Modern Apartment</h4>
+                    <p>Price: $450,000</p>
+                </div>
+                <div class="property-card">
+                    <img src="https://via.placeholder.com/350x250/F0F0F0/000000?text=Property+3" alt="Property 3">
+                    <h4>Spacious House</h4>
+                    <p>Price: $780,000</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="expertise" class="section">
+    <footer class="footer" id="contact">
         <div class="container">
-            <h2>Why Choose Adithi Diagnostics?</h2>
-            <div class="expertise-points">
-                <div class="expertise-point">
-                    <h3>Accuracy & Reliability</h3>
-                    <p>Advanced testing methodologies and strict quality assurance protocols for precise and dependable results.</p>
-                </div>
-                <div class="expertise-point">
-                    <h3>Experienced Team</h3>
-                    <p>A dedicated team of highly skilled pathologists, radiologists, cardiologists, and technicians ensuring expert care.</p>
-                </div>
-                <div class="expertise-point">
-                    <h3>State-of-the-Art Technology</h3>
-                    <p>Equipped with the latest diagnostic instruments and modern infrastructure for superior analysis.</p>
-                </div>
-                <div class="expertise-point">
-                    <h3>Comprehensive Services</h3>
-                    <p>A wide range of diagnostic tests and imaging services available under one roof for your convenience.</p>
-                </div>
-                <div class="expertise-point">
-                    <h3>Patient Convenience</h3>
-                    <p>Easy appointment scheduling, efficient processes, and home sample collection for a seamless experience.</p>
-                </div>
+            <p>&copy; 2025 Quarter. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
             </div>
-        </div>
-    </section>
-
-    <section class="cta">
-        <div class="container">
-            <h2>Experience Accurate Diagnostics with Adithi.</h2>
-            <p>Connect with us today for reliable health insights and personalized care.</p>
-            <a href="#contact" class="btn">Get in Touch</a>
-        </div>
-    </section>
-
-    <section id="contact" class="section">
-        <div class="container">
-            <h2>Contact & Patient Reviews</h2> <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Our Location & Details</h3>
-                    <p><strong>Adithi Diagnostics</strong></p>
-                    <p>Near Private Bus Stand, Edappally Toll,</p>
-                    <p>Edappally, Kochi - 24</p>
-                    <p>Kerala, India</p>
-                    <p><a href="tel:+919747575757">Phone: +91 97475 75757</a></p>
-                    <p><a href="mailto:adithidiagnostics@gmail.com">Email: adithidiagnostics@gmail.com</a></p>
-                    <p><strong>Business Hours:</strong></p>
-                    <p>Monday - Saturday: 7:00 AM - 7:00 PM</p>
-                    <p>Sunday: 8:00 AM - 1:00 PM</p>
-                </div>
-
-                <div class="testimonials-block">
-                    <h3>What Our Patients Say</h3>
-                    <div class="testimonial-item">
-                        <div class="stars">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        </div>
-                        <p class="review-text">"Excellent experience. Very neat and clean lab. Professional staff. And quick report delivery. Very happy with the service."</p>
-                        <p class="reviewer-name">- Giri Raju</p>
-                    </div>
-                    <div class="testimonial-item">
-                        <div class="stars">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        </div>
-                        <p class="review-text">"Good service and quick reports, clean, neat, calm and quiet atmosphere, friendly staff, affordable cost. All good"</p>
-                        <p class="reviewer-name">- Sheeja Binoj</p>
-                    </div>
-                    <div class="testimonial-item">
-                        <div class="stars">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        </div>
-                        <p class="review-text">"Very excellent staff and good service and good results I am always happy in this lab."</p>
-                        <p class="reviewer-name">- K J Antony</p>
-                    </div>
-                     <div class="testimonial-item">
-                        <div class="stars">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        </div>
-                        <p class="review-text">"Good experience, staff's are very friendly, accurate result and quick report delivery.. Keep it up 👍"</p>
-                        <p class="reviewer-name">- Amrutha C S</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Adithi Diagnostics. All rights reserved.</p>
-            <p>Designed with care by [Your Name/Company Name]</p>
         </div>
     </footer>
 
-    <script>
-        // Hamburger menu toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const mainNav = document.getElementById('mainNav');
-
-        if (menuToggle && mainNav) { // Ensure elements exist before adding listeners
-            menuToggle.addEventListener('click', () => {
-                mainNav.classList.toggle('nav-open'); // Toggles the 'nav-open' class
-            });
-
-            // Close menu when a navigation link is clicked (on mobile)
-            document.querySelectorAll('nav a').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-
-                    // Close the mobile menu if it's open
-                    if (mainNav.classList.contains('nav-open')) {
-                        mainNav.classList.remove('nav-open');
-                    }
-
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-
-                    // Remove active class from all and add to clicked
-                    document.querySelectorAll('nav a').forEach(link => {
-                        link.classList.remove('active');
-                    });
-                    this.classList.add('active');
-                });
-            });
-        }
-
-
-        // Highlight active nav link on scroll
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('nav a');
-
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                // Adjust sensitivity slightly for better detection
-                if (pageYOffset >= sectionTop - sectionHeight / 2) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').includes(current)) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Set initial active state for Home on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelector('nav a[href="#home"]').classList.add('active');
-        });
-    </script>
 </body>
 </html>
+￼Enter                        <i class="fas fa-map-marker-alt"></i> Beautiful Scene Around
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-life-ring"></i> Exceptional Lifestyle
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-lock"></i> Complete 24/7 Security
+                    </div>
+                </div>
+                <p class="quote">"Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui."</p>
+                <button class="btn primary-btn">Our Services</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="statistics-section">
+        <div class="container">
+            <div class="stat-item">
+                <i class="fas fa-building"></i>
+                <h3>560+</h3>
+                <p>Total Area Sq</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-city"></i>
+                <h3>197K+</h3>
+                <p>Apartments Sold</p>
+      </div>
+            <div class="stat-item">
+                <i class="fas fa-hard-hat"></i>
+                <h3>268+</h3>
+                <p>Total Constructions</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-chair"></i>
+                <h3>340+</h3>
+                <p>Apartx Rooms</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="properties-section" id="properties">
+        <div class="container">
+            <h2>Today Sells Properties</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, fuga?</p>
+            <div class="property-grid">
+                <div class="property-card">
+                    <img src="https://via.placeholder.com/350x250/F0F0F0/000000?text=Property+1" alt="Property 1">
+                    <h4>Luxury Villa</h4>
+                    <p>Price: $1,200,000</p>
+                </div>
+                <div class="property-card">
+                    <img src="https://via.placeholder.com/350x250/F0F0F0/000000?text=Property+2" alt="Property 2">
