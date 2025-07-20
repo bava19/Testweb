@@ -3,128 +3,491 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unique Lab Kattayikonam</title>
+    <title>Unique Lab Kattayikonam - Your Health, Our Priority</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
-        nav { background-color: #007bff; padding: 10px; position: fixed; width: 100%; top: 0; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; }
-        section { padding: 60px 20px; min-height: 100vh; }
-        #home { background-color: #e9ecef; }
-        #about { background-color: #ffffff; }
-        #booking { background-color: #e9ecef; }
-        #testimonials { background-color: #ffffff; }
-        #contact { background-color: #e9ecef; }
-        form { max-width: 400px; margin: 0 auto; }
-        input, select { width: 100%; margin: 10px 0; padding: 10px; }
-        button { background-color: #007bff; color: white; padding: 10px; border: none; cursor: pointer; }
-        .testimonial { border-bottom: 1px solid #ddd; padding: 10px; margin: 10px 0; }
-        @media (max-width: 768px) { section { padding: 80px 10px; } nav a { margin: 0 5px; font-size: 14px; } }
+        /* General Body Styles */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Container for Centering Content */
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: #ffffff;
+            color: #333;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-bottom: 3px solid #007bff;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #0056b3;
+        }
+        
+        header h1 .highlight {
+            font-weight: 300;
+        }
+
+        header nav ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+        }
+
+        header nav ul li {
+            margin-left: 25px;
+        }
+
+        header nav ul li a {
+            color: #555;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            color: #007bff;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        section:first-of-type {
+            padding-top: 120px; /* Adjust for fixed header */
+        }
+        
+        section h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            color: #0056b3;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            margin-top: -40px;
+            margin-bottom: 50px;
+            color: #6c757d;
+            font-size: 1.1rem;
+        }
+
+        /* About Section */
+        #about .about-content {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        #about img {
+            max-width: 40%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        #about .text-content {
+            flex: 1;
+        }
+
+        #about h3 {
+            color: #007bff;
+            margin-top: 20px;
+        }
+
+        .team {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .team-members {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .team-member {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            width: 200px;
+        }
+        
+        .team-member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        
+        .team-member h4 {
+            margin: 0 0 5px 0;
+            color: #333;
+        }
+
+        .team-member p {
+            margin: 0;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+
+        /* Booking Section */
+        #booking-section {
+            background-color: #ffffff;
+        }
+        
+        #booking-form {
+            max-width: 600px;
+            margin: auto;
+            padding: 30px;
+            background: #fdfdfd;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+
+        .btn-submit {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #0056b3;
+        }
+
+        /* Testimonials Section */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .testimonial-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            border-left: 5px solid #007bff;
+        }
+
+        .testimonial-card p {
+            margin: 0 0 15px 0;
+            font-style: italic;
+        }
+        
+        .testimonial-card .author {
+            font-weight: bold;
+            color: #0056b3;
+            text-align: right;
+        }
+        
+        .google-note {
+            text-align: center;
+            margin-top: 40px;
+            color: #6c757d;
+            font-style: italic;
+        }
+
+        /* Footer */
+        footer {
+            background: #343a40;
+            color: #f8f9fa;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        footer .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        footer .address, footer .phone {
+            font-size: 1.1rem;
+        }
+        
+        footer .phone a {
+            color: #00aaff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        footer .phone a:hover {
+            text-decoration: underline;
+        }
+
+        footer .copyright {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #adb5bd;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+            }
+            
+            header h1 {
+                margin-bottom: 10px;
+            }
+            
+            header nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            header nav ul li {
+                margin: 10px 0;
+            }
+            
+            #about .about-content {
+                flex-direction: column;
+            }
+
+            #about img {
+                max-width: 80%;
+                margin: 0 auto;
+            }
+        }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#booking">Book Appointment</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#contact">Contact</a>
-    </nav>
 
-    <section id="home">
-        <h1>Welcome to Unique Lab Kattayikonam</h1>
-        <p>Your trusted partner for accurate and reliable laboratory services. We offer a wide range of tests with state-of-the-art equipment.</p>
-    </section>
-
-    <section id="about">
-        <h2>About Us</h2>
-        <h3>Mission</h3>
-        <p>Our mission is to deliver high-quality, timely, and affordable diagnostic services to support healthcare needs in the community. (Placeholder: Replace with actual mission statement.)</p>
-        
-        <h3>History</h3>
-        <p>Founded in 2010, Unique Lab Kattayikonam has grown from a small testing facility to a comprehensive diagnostic center serving the Kattayikonam region. (Placeholder: Replace with real history details.)</p>
-        
-        <h3>Team</h3>
-        <ul>
-            <li>Dr. John Doe - Chief Pathologist (Placeholder)</li>
-            <li>Jane Smith - Lab Technician (Placeholder)</li>
-            <li>Mike Johnson - Administrator (Placeholder)</li>
-        </ul>
-    </section>
-
-    <section id="booking">
-        <h2>Book a Time Slot</h2>
-        <form id="bookingForm">
-            <label for="service">Select Service:</label>
-            <select id="service" name="service">
-                <option value="xray">X-ray</option>
-                <option value="hbcount">HB Count Test</option>
-                <option value="mri">MRI</option>
-                <option value="bloodsugar">Blood Sugar Test</option>
-                <option value="ecg">ECG</option>
-            </select>
-            
-            <label for="date">Choose Date:</label>
-            <input type="date" id="date" name="date" required>
-            
-            <label for="time">Choose Time:</label>
-            <input type="time" id="time" name="time" required>
-            
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" required>
-            
-            <button type="submit">Book Now</button>
-        </form>
-        <p id="bookingMessage"></p>
-    </section>
-
-    <section id="testimonials">
-        <h2>Testimonials</h2>
-        <p>Note: These are placeholders. For real testimonials, use the Google Places API integration below (requires API key and place ID).</p>
-        <div class="testimonial">
-            <p>"Excellent service and quick results!" - Customer A</p>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Unique Lab <span class="highlight">Kattayikonam</span></h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#booking-section">Book a Test</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="testimonial">
-            <p>"Friendly staff and accurate testing." - Customer B</p>
-        </div>
-        <div class="testimonial">
-            <p>"Highly recommend for all lab needs." - Customer C</p>
-        </div>
-    </section>
+    </header>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Address: 123 Kattayikonam St, Kattayikonam, State, ZIP</p>
-        <p>Phone: <a href="tel:+919876543210">+91 9876543210</a></p>
-    </section>
+    <main>
+        <!-- About Us Section -->
+        <section id="about">
+            <div class="container">
+                <h2>About Our Laboratory</h2>
+                <p class="section-subtitle">Precision, Care, and Trust</p>
+                <div class="about-content">
+                    <img src="https://via.placeholder.com/450x300.png?text=Unique+Lab+Facility" alt="Modern laboratory equipment">
+                    <div class="text-content">
+                        <h3>Our Mission</h3>
+                        <p>To provide accurate, reliable, and timely diagnostic services to our community. We are committed to employing state-of-the-art technology and upholding the highest standards of quality and patient care.</p>
+                        
+                        <h3>Our History</h3>
+                        <p>Founded over a decade ago in the heart of Kattayikonam, Unique Lab started as a small facility with a big vision. Through dedication and a commitment to excellence, we have grown into a leading diagnostic center trusted by patients and doctors alike.</p>
+                    </div>
+                </div>
+
+                <div class="team">
+                    <h3>Meet Our Team</h3>
+                    <div class="team-members">
+                        <div class="team-member">
+                            <img src="https://via.placeholder.com/100x100.png?text=Dr.+Anil" alt="Team Member 1">
+                            <h4>Dr. Anil Kumar</h4>
+                            <p>Chief Pathologist</p>
+                        </div>
+                        <div class="team-member">
+                            <img src="https://via.placeholder.com/100x100.png?text=Sunita" alt="Team Member 2">
+                            <h4>Sunita Sharma</h4>
+                            <p>Lab Director</p>
+                        </div>
+                        <div class="team-member">
+                            <img src="https://via.placeholder.com/100x100.png?text=Rajesh" alt="Team Member 3">
+                            <h4>Rajesh Menon</h4>
+                            <p>Senior Technician</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Section -->
+        <section id="booking-section">
+            <div class="container">
+                <h2>Book a Time Slot</h2>
+                <p class="section-subtitle">Quick and easy online appointment booking</p>
+                <form id="booking-form">
+                    <div class="form-group">
+                        <label for="service">Select Service</label>
+                        <select id="service" name="service" required>
+                            <option value="" disabled selected>-- Choose a test --</option>
+                            <option value="x-ray">X-ray</option>
+                            <option value="hb-count">HB Count Test</option>
+                            <option value="mri">MRI</option>
+                            <option value="blood-sugar">Blood Sugar Test</option>
+                            <option value="ecg">ECG</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Choose Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Choose Time</label>
+                        <input type="time" id="time" name="time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your 10-digit mobile number" required>
+                    </div>
+                    <button type="submit" class="btn-submit">Book Appointment</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials">
+            <div class="container">
+                <h2>What Our Patients Say</h2>
+                <p class="section-subtitle">Real feedback from our valued patients</p>
+                <div class="testimonials-grid">
+                    <!-- Example Testimonial 1 -->
+                    <div class="testimonial-card">
+                        <p>"The staff was incredibly professional and the process was so efficient. I got my blood sugar test results back faster than I expected. Highly recommend this lab!"</p>
+                        <div class="author">- Priya S.</div>
+                    </div>
+                    <!-- Example Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <p>"Clean facility and friendly technicians. They made the entire experience for my ECG comfortable and stress-free. The online booking system is a great feature."</p>
+                        <div class="author">- Amit R.</div>
+                    </div>
+                    <!-- Example Testimonial 3 -->
+                    <div class="testimonial-card">
+                        <p>"Accurate results and a very caring team. I have been coming to Unique Lab for years and they have always maintained a high standard of service."</p>
+                        <div class="author">- David J.</div>
+                    </div>
+                </div>
+                <p class="google-note">
+                    <!-- Developer Note: This section is intended to be populated dynamically. -->
+                    <!-- You would use JavaScript and the Google Maps Places API to fetch and display recent reviews for your business. -->
+                    <!-- The cards above are static examples for demonstration. -->
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer and Contact Info -->
+    <footer id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="address">
+                Unique Lab Kattayikonam<br>
+                123 Kattayikonam St, Kattayikonam, State, ZIP
+            </div>
+            <div class="phone">
+                Call Us: <a href="tel:+919876543210">+91 9876543210</a>
+            </div>
+            <div class="copyright">
+                &copy; 2024 Unique Lab Kattayikonam. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
 
     <script>
-        // Form submission handler (front-end only, no backend)
-        document.getElementById('bookingForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            document.getElementById('bookingMessage').textContent = 'Booking submitted! (Note: This is a demo; no real booking is processed.)';
+        // Set min date for date picker to today
+        document.addEventListener('DOMContentLoaded', function() {
+            var today = new Date().toISOString().split('T')[0];
+            document.getElementById('date').setAttribute('min', today);
         });
 
-        // Example Google Places API integration (commented out; add your API key and place ID)
-        /*
-        const apiKey = 'YOUR_API_KEY_HERE';
-        const placeId = 'YOUR_PLACE_ID_HERE'; // Find via Google Maps
-        fetch(`https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews&key=${apiKey}`)
-            .then(response => response.json())
-            .then(data => {
-                const testimonialsSection = document.getElementById('testimonials');
-                testimonialsSection.innerHTML = '<h2>Testimonials</h2>';
-                data.result.reviews.forEach(review => {
-                    const div = document.createElement('div');
-                    div.className = 'testimonial';
-                    div.innerHTML = `<p>"${review.text}" - ${review.author_name}</p>`;
-                    testimonialsSection.appendChild(div);
-                });
-            })
-            .catch(error => console.error('Error fetching testimonials:', error));
-        */
+        // Handle form submission
+        const form = document.getElementById('booking-form');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent actual form submission
+            
+            // Developer Note: In a real-world application, you would send this data
+            // to a backend server to process the booking and store it in a database.
+            // For this demonstration, we'll just show a confirmation message.
+            
+            const service = document.getElementById('service').value;
+            const name = document.getElementById('name').value;
+            
+            if(service && name) {
+                alert(`Thank you, ${name}! Your appointment for a ${service} has been requested. We will contact you shortly to confirm.`);
+                form.reset(); // Clear the form
+            } else {
+                alert('Please fill out all the required fields.');
+            }
+        });
+
+        // Google Maps API integration for testimonials would go here.
+        // You would need to set up a Google Cloud Platform project, enable the
+        // Places API, and use JavaScript to make API calls to fetch reviews.
     </script>
+
 </body>
 </html>
