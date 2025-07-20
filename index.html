@@ -1,312 +1,334 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quarter - Real Estate Agency</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>NovaLab — Empowering Discovery</title>
+  <meta name="description" content="Cutting-edge laboratory services. Quality, integrity, and innovation for all your scientific needs. NovaLab — Empowering Discovery." />
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #17181C;
+      --panel: #21222a;
+      --accent: linear-gradient(90deg, #C246F0 0%, #2FF2AF 100%);
+      --card-gradient: linear-gradient(135deg, #292B36 60%, #21222A 100%);
+      --text: #ededf8;
+      --muted: #b6bbc5;
+      --brand: #8A5AF9;
+      --radius: 20px;
+      --shadow: 0 6px 24px 0 rgba(18,22,57,0.16);
+      --button-bg: #C246F0;
+      --button-hover: #2FF2AF;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      background: var(--bg-color);
+      color: var(--text);
+      font-family: 'Inter',Segoe UI,Arial,sans-serif;
+      min-height: 100%;
+    }
+    header {
+      width: 100%;
+      padding: 1.5rem 0;
+      background: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .nav {
+      max-width: 1200px;
+      width: 90%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      background: var(--accent);
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+    nav ul {
+      display: flex;
+      gap: 2em;
+      list-style: none;
+    }
+    nav li a {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    nav li a:hover {
+      color: #fff;
+    }
+    .btn-main {
+      background: var(--button-bg);
+      color: #fff;
+      padding: 0.7em 1.5em;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-left: 1.5em;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      transition: background 0.3s;
+    }
+    .btn-main:hover {
+      background: var(--button-hover);
+      color: #17181C;
+    }
+    .hero {
+      width: 100%;
+      max-width: 1200px;
+      margin: 3rem auto 2rem;
+      text-align: center;
+      position: relative;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      background: var(--accent);
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.4rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-img {
+      width: 320px;
+      margin: 0 auto 2rem;
+      display: block;
+    }
+    .sections {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2em;
+      align-items: stretch;
+      justify-content: center;
+    }
+    .card {
+      background: var(--card-gradient);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 2rem 2rem;
+      transition: transform 0.18s, box-shadow 0.18s;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: relative;
+      min-height: 230px;
+    }
+    .card:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 12px 38px 0 rgba(58,56,116,0.26);
+    }
+    .card svg {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 1em;
+      background: var(--accent);
+      border-radius: 12px;
+      padding: 8px;
+      filter: drop-shadow(0 2px 8px #191A2F88);
+    }
+    .card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.6em;
+      color: #fff;
+    }
+    .card p {
+      font-size: 1.05rem;
+      color: var(--muted);
+    }
+    .about {
+      margin: 3rem auto 1rem;
+      text-align: center;
+      max-width: 800px;
+    }
+    .about h2 {
+      font-size: 2.2rem;
+      background: var(--accent);
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      margin-bottom: 0.8rem;
+    }
+    .about p {
+      color: var(--muted);
+      font-size: 1.18rem;
+    }
+    .contact {
+      background: linear-gradient(90deg, #C246F030 0%, #2FF2AF30 100%);
+      border-radius: var(--radius);
+      max-width: 800px;
+      margin: 3rem auto 2rem;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .contact h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .contact form {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.3rem;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .contact input, .contact textarea {
+      border: none;
+      border-radius: 12px;
+      padding: 1em;
+      background: #17181cfa;
+      color: #fff;
+      font-size: 1rem;
+      outline: none;
+      transition: box-shadow 0.15s;
+    }
+    .contact input:focus, .contact textarea:focus {
+      box-shadow: 0 0 0 2px #2FF2AF77;
+    }
+    .contact button {
+      background: var(--button-bg);
+      color: #fff;
+      padding: 0.9em 2em;
+      border: none;
+      border-radius: 26px;
+      font-size: 1.15rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      transition: background 0.2s;
+    }
+    .contact button:hover {
+      background: var(--button-hover);
+      color: #17181C;
+    }
+    footer {
+      color: #75788A;
+      text-align: center;
+      padding: 1.3rem 0 2rem;
+      font-size: 1rem;
+      background: transparent;
+    }
+    /* Responsive styles */
+    @media (max-width: 515px) {
+      .hero h1 { font-size: 2.1rem; }
+      .about h2 { font-size: 1.3rem; }
+      .sections { grid-template-columns: 1fr; }
+      .card { padding: 1.2rem 1rem; }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <div class="nav">
+      <div class="logo">
+        <svg width="32" height="32" viewBox="0 0 32 32">
+          <circle cx="16" cy="16" r="14" fill="#2FF2AF"/>
+          <circle cx="16" cy="13" r="8" fill="#C246F0" opacity="0.88"/>
+        </svg>
+        NovaLab
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><button class="btn-main">Get Started</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <i class="fas fa-home"></i> Quarter
-            </div>
-            <nav class="nav">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#properties">Shop</a></li>
-                    <li><a href="#news">News</a></li>
-                    <li><a href="#">Pages <i class="fas fa-caret-down"></i></a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="header-icons">
-                <a href="#"><i class="fas fa-search"></i></a>
-                <a href="#"><i class="fas fa-shopping-cart"></i></a>
-            </div>
-        </div>
-    </header>
+  <section class="hero">
+    <img class="hero-img" src="https://svgshare.com/i/16dK.svg" alt="Laboratory illustration" />
+    <h1>Empowering Discovery.<br>Redefining Laboratory Standards.</h1>
+    <p>
+      Accelerate your scientific journey with NovaLab — where innovation meets trusted laboratory excellence.
+    </p>
+  </section>
 
-    <section class="hero-section" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Find Your Dream House By Us</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <button class="btn primary-btn">Make An Inquiry</button>
-            </div>
-            <div class="hero-image">
-                <img src="https://via.placeholder.com/600x400/F0F0F0/000000?text=Modern+House" alt="Modern House">
-            </div>
-        </div>
-    </section>
+  <div id="services" class="sections">
+    <div class="card">
+      <svg fill="none" viewBox="0 0 32 32"><rect x="7" y="7" width="18" height="18" rx="5" fill="#2FF2AF"/><path d="M12 12h8v8h-8z" fill="#17181c"/></svg>
+      <h3>Advanced Diagnostics</h3>
+      <p>
+        Comprehensive sample analysis with the latest in bio-testing technology for precision and speed.
+      </p>
+    </div>
+    <div class="card">
+      <svg fill="none" viewBox="0 0 32 32"><circle cx="16" cy="16" r="12" fill="#C246F0"/><rect x="14" y="10" width="4" height="12" rx="2" fill="#fff"/></svg>
+      <h3>DNA & Molecular Services</h3>
+      <p>
+        From genetic sequencing to PCR, we deliver reliable molecular data for research and diagnostics.
+      </p>
+    </div>
+    <div class="card">
+      <svg fill="none" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="#2FF2AF"/><rect x="11" y="15" width="10" height="2" rx="1" fill="#fff"/></svg>
+      <h3>Quality Assurance</h3>
+      <p>
+        Strict quality control with international accreditation, ensuring your results are accurate and secure.
+      </p>
+    </div>
+    <div class="card">
+      <svg fill="none" viewBox="0 0 32 32"><rect x="8" y="8" width="16" height="16" rx="8" fill="#C246F0"/><path d="M20 20l-8-8" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+      <h3>R&D Partnerships</h3>
+      <p>
+        Flexible collaboration models for academic, pharma, and biotech research — together we break new ground.
+      </p>
+    </div>
+  </div>
 
-    <section class="search-filter-section">
-        <div class="container">
-            <div class="filter-group">
-                <label for="area">Choose Area</label>
-                <select id="area">
-                    <option value="">Any Area</option>
-                    <option value="new-york">New York</option>
-                    <option value="london">London</option>
-                    <option value="paris">Paris</option>
-                </select>
-            </div>
-            <div class="filter-group">
-                <label for="status">Property Status</label>
-                <select id="status">
-                    <option value="">Any Status</option>
-                    <option value="for-sale">For Sale</option>
-                    <option value="for-rent">For Rent</option>
-                </select>
-            </div>
-            <div class="filter-group">
-                <label for="type">Property Type</label>
-                <select id="type">
-                    <option value="">Any Type</option>
-                    <option value="house">House</option>
-                    <option value="apartment">Apartment</option>
-                    <option value="villa">Villa</option>
-                </select>
-            </div>
-            <button class="btn primary-btn find-now-btn">Find Now</button>
-        </div>
-    </section>
+  <section id="about" class="about">
+    <h2>About NovaLab</h2>
+    <p>
+      NovaLab is dedicated to advancing science by delivering exceptional laboratory solutions for healthcare, biotech, and research communities. With state-of-the-art facilities, a passionate team of scientists, and a commitment to quality, we enable discoveries that shape tomorrow.
+    </p>
+  </section>
 
-    <section class="about-us-section" id="about">
-        <div class="container">
-            <div class="about-image">
-                <img src="https://via.placeholder.com/500x500/F0F0F0/000000?text=Interior+View" alt="Interior View">
-            </div>
-            <div class="about-content">
-                <h2>The Leading Real Estate Rental Marketplace.</h2>
-                <p>Over 35,000 people work for us in more than 70 countries all over the [missing text from image] world, combined with specialized services.</p>
-                <div class="features-grid">
-                    <div class="feature-item">
-                        <i class="fas fa-home"></i> Smart Home Design
-                    </div>
-                    <div class="feature-item">
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quarter - Real Estate Agency</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
+  <section id="contact" class="contact">
+    <h2>Contact Our Team</h2>
+    <p>
+      Ready to accelerate your research? Send us a message and our experts will get back to you.
+    </p>
+    <form>
+      <input type="text" placeholder="Name" required />
+      <input type="email" placeholder="Email" required />
+      <textarea rows="4" placeholder="How can we help?" required></textarea>
+      <button type="submit">Send Request</button>
+    </form>
+  </section>
 
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <i class="fas fa-home"></i> Quarter
-            </div>
-            <nav class="nav">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#properties">Shop</a></li>
-                    <li><a href="#news">News</a></li>
-                    <li><a href="#">Pages <i class="fas fa-caret-down"></i></a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="header-icons">
-                <a href="#"><i class="fas fa-search"></i></a>
-                <a href="#"><i class="fas fa-shopping-cart"></i></a>
-            </div>
-        </div>
-    </header>
-
-    <section class="hero-section" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Find Your Dream House By Us</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <button class="btn primary-btn">Make An Inquiry</button>
-            </div>
-            <div class="hero-image">
-                <img src="https://via.placeholder.com/600x400/F0F0F0/000000?text=Modern+House" alt="Modern House">
-            </div>
-        </div>
-    </section>
-
-    <section class="search-filter-section">
-        <div class="container">
-            <div class="filter-group">
-                <label for="area">Choose Area</label>
-                <select id="area">
-                    <option value="">Any Area</option>
-                    <option value="new-york">New York</option>
-                    <option value="london">London</option>
-                    <option value="paris">Paris</option>
-                </select>
-            </div>
-            <div class="filter-group">
-                <label for="status">Property Status</label>
-                <select id="status">
-                    <option value="">Any Status</option>
-                    <option value="for-sale">For Sale</option>
-                    <option value="for-rent">For Rent</option>
-                </select>
-            </div>
-            <div class="filter-group">
-                <label for="type">Property Type</label>
-                <select id="type">
-                    <option value="">Any Type</option>
-                    <option value="house">House</option>
-                    <option value="apartment">Apartment</option>
-                    <option value="villa">Villa</option>
-                </select>
-            </div>
-            <button class="btn primary-btn find-now-btn">Find Now</button>
-        </div>
-    </section>
-
-    <section class="about-us-section" id="about">
-        <div class="container">
-            <div class="about-image">
-                <img src="https://via.placeholder.com/500x500/F0F0F0/000000?text=Interior+View" alt="Interior View">
-            </div>
-            <div class="about-content">
-                <h2>The Leading Real Estate Rental Marketplace.</h2>
-                <p>Over 35,000 people work for us in more than 70 countries all over the [missing text from image] world, combined with specialized services.</p>
-                <div class="features-grid">
-                    <div class="feature-item">
-                        <i class="fas fa-home"></i> Smart Home Design
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-map-marker-alt"></i> Beautiful Scene Around
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-life-ring"></i> Exceptional Lifestyle
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-lock"></i> Complete 24/7 Security
-                    </div>
-                </div>
-                <p class="quote">"Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui."</p>
-                <button class="btn primary-btn">Our Services</button>
-            </div>
-        </div>
-    </section>
-
-    <section class="statistics-section">
-        <div class="container">
-            <div class="stat-item">
-                <i class="fas fa-building"></i>
-                <h3>560+</h3>
-                <p>Total Area Sq</p>
-            </div>
-            <div class="stat-item">
-                <i class="fas fa-city"></i>
-                <h3>197K+</h3>
-                <p>Apartments Sold</p>
-            </div>
-            <div class="stat-item">
-                <i class="fas fa-hard-hat"></i>
-                <h3>268+</h3>
-                <p>Total Constructions</p>
-            </div>
-            <div class="stat-item">
-                <i class="fas fa-chair"></i>
-                <h3>340+</h3>
-                <p>Apartx Rooms</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="properties-section" id="properties">
-        <div class="container">
-            <h2>Today Sells Properties</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, fuga?</p>
-            <div class="property-grid">
-                <div class="property-card">
-                    <img src="https://via.placeholder.com/350x250/F0F0F0/000000?text=Property+1" alt="Property 1">
-                    <h4>Luxury Villa</h4>
-                    <p>Price: $1,200,000</p>
-                </div>
-                <div class="property-card">
-                    <img src="https://via.placeholder.com/350x250/F0F0F0/000000?text=Property+2" alt="Property 2">
-                    <h4>Modern Apartment</h4>
-                    <p>Price: $450,000</p>
-                </div>
-                <div class="property-card">
-                    <img src="https://via.placeholder.com/350x250/F0F0F0/000000?text=Property+3" alt="Property 3">
-                    <h4>Spacious House</h4>
-                    <p>Price: $780,000</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer" id="contact">
-        <div class="container">
-            <p>&copy; 2025 Quarter. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-        </div>
-    </footer>
-
+  <footer>
+    © 2025 NovaLab. All rights reserved. | Empowering Discovery
+  </footer>
 </body>
 </html>
-￼Enter                        <i class="fas fa-map-marker-alt"></i> Beautiful Scene Around
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-life-ring"></i> Exceptional Lifestyle
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-lock"></i> Complete 24/7 Security
-                    </div>
-                </div>
-                <p class="quote">"Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui."</p>
-                <button class="btn primary-btn">Our Services</button>
-            </div>
-        </div>
-    </section>
-
-    <section class="statistics-section">
-        <div class="container">
-            <div class="stat-item">
-                <i class="fas fa-building"></i>
-                <h3>560+</h3>
-                <p>Total Area Sq</p>
-            </div>
-            <div class="stat-item">
-                <i class="fas fa-city"></i>
-                <h3>197K+</h3>
-                <p>Apartments Sold</p>
-      </div>
-            <div class="stat-item">
-                <i class="fas fa-hard-hat"></i>
-                <h3>268+</h3>
-                <p>Total Constructions</p>
-            </div>
-            <div class="stat-item">
-                <i class="fas fa-chair"></i>
-                <h3>340+</h3>
-                <p>Apartx Rooms</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="properties-section" id="properties">
-        <div class="container">
-            <h2>Today Sells Properties</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, fuga?</p>
-            <div class="property-grid">
-                <div class="property-card">
-                    <img src="https://via.placeholder.com/350x250/F0F0F0/000000?text=Property+1" alt="Property 1">
-                    <h4>Luxury Villa</h4>
-                    <p>Price: $1,200,000</p>
-                </div>
-                <div class="property-card">
-                    <img src="https://via.placeholder.com/350x250/F0F0F0/000000?text=Property+2" alt="Property 2">
